@@ -25,10 +25,10 @@ spec:
             - sh
             - -c
           args:
-            - mknod -m 660 /dev/loop99  b 7 11;
+            - mknod -m 660 /dev/loop11  b 7 11;
               apt update && apt install -y lvm2;
               truncate -s 5G /host/tmp/lvm.hdd;
-              losetup /dev/loop99 /host/tmp/lvm.hdd;
+              losetup /dev/loop11 /host/tmp/lvm.hdd;
               sed -i 's/udev_sync = 1/udev_sync = 0/g' /etc/lvm/lvm.conf;
               sed -i 's/udev_rules = 1/udev_rules = 0/g' /etc/lvm/lvm.conf
           image: debian
